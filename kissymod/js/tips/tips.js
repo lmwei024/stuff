@@ -179,8 +179,6 @@ KISSY.add('tips/tips', function(S){
 			
 				
 				opt.create(item);
-
-				console.log(opt);
 			});
 		}
 
@@ -189,7 +187,6 @@ KISSY.add('tips/tips', function(S){
         'node',
         'dom',
         'event',
-        'sizzle',
         'tips/tips.css'
     ]
 });
