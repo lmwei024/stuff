@@ -1,5 +1,6 @@
 /*
- * TIPS
+ * TIPS for KISSY
+ * @VinceSnow mail@vincesnow.com
  */
 
 KISSY.add('tips/tips', function(S){
