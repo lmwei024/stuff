@@ -122,7 +122,21 @@ KISSY.add('tips/tips', function(S){
 	}
 
 	S.mix(S, {
-		tips: function(elem, option){
+		objectPlus: function(o, stuff){
+		    var n;
+		    function F(){}
+		    F.prototype = o;
+		    n = new F();
+		    n.uber = o;
+		    
+		    for (var i in stuff){
+		        n[i] = stuff[i];
+		    }
+		    return n;
+		}
+	});
+
+	return function(elem, option){
 			
 			if (typeof option !== 'object'){
 				var option = {};
@@ -168,20 +182,7 @@ KISSY.add('tips/tips', function(S){
 
 				console.log(opt);
 			});
-		},
-		objectPlus: function(o, stuff){
-		    var n;
-		    function F(){}
-		    F.prototype = o;
-		    n = new F();
-		    n.uber = o;
-		    
-		    for (var i in stuff){
-		        n[i] = stuff[i];
-		    }
-		    return n;
 		}
-	})
 
 }, {
     requires: [

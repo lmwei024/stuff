@@ -64,14 +64,24 @@ KISSY.config({
     <p>&nbsp;</p>
     <p>JS调用</p>
     <p>&nbsp;</p>
-    <p>S.tips(elem, option);</p>
+    <code><pre>
+KISSY.use('tips/tips', function(S, TIPS){
+    TIPS(elem, option);
+});
+    </pre></code>
     <p>&nbsp;</p>
     <p>option用做高级自定义，如果不需要，通常省略。</p>
     <p>&nbsp;</p>
     <p>elem可以是一个dom对象，也可以是一个dom对象的数组，也可以是CSS选择器（类似jquery）。会根据传入参数的类型自动进行判断</p>
     <p>&nbsp;</p>
     <p>例如本演示中的例子是：</p>
-    <p>S.tips('#tips p');    </p>
+    <p>
+    <code><pre>
+KISSY.use('tips/tips', function(S, TIPS){
+    TIPS('#tips p');
+});
+    </pre></code>
+    </p>
     <p>&nbsp;</p>
     <p><strong>附：高级自定义</strong></p>
     <p>&nbsp;</p>
@@ -81,14 +91,21 @@ KISSY.config({
     <p>&nbsp;</p>
     <p>例如    </p>
     <p>&nbsp;</p>
-    <p>S.tips(elem, {</p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;skin: '皮肤', //为提示框加上vui-tips-skin的classname，方便定义不同样式</p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;tpl: function(){</p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var _tpl = '&lt;em&gt;.&lt;/em&gt;&lt;div class=&quot;vui-tips-cntr&quot;&gt;&lt;/div&gt;'; //例如需要箭头指示，可以这样自定义模板，再建立css样式</p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return _tpl;</p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;//你还可以照这样重新定义show\hide方法以便加上动画过渡，或者重新定义setContent方法添加按钮，或者重新定义events方法修改相关事件处理机制，whatever you want.</p>
-    <p>});</p>
+    <p>
+    <code><pre>
+KISSY.use('tips/tips', function(S, TIPS){
+    TIPS(elem, {
+        skin: '皮肤', //为提示框加上vui-tips-skin的classname，方便定义不同样式
+        tpl: function(){
+            var _tpl = '<&lt;em&gt;.&lt;/em&gt;&lt;div class="vui-tips-cntr"&gt;&lt;/div&gt;'; //例如需要箭头指示，可以这样自定义模板，再建立css样式
+            return _tpl;
+        }
+        //你还可以照这样重新定义show\hide方法以便加上动画过渡，或者重新定义setContent方法添加按钮，或者重新定义events方法修改相关事件处理机制，whatever you want.
+    });
+});
+    </pre></code>
+    </p>
+
 </div>
 
 
@@ -96,7 +113,7 @@ KISSY.config({
 <script type="text/javascript">
 // 测试
 KISSY.use('tips/tips', function(S, TIPS){
-    S.tips('#tips p');
+    TIPS('#tips p');
 });
 
 
